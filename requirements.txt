@@ -15,8 +15,9 @@ scipy>=1.10.0
 pyyaml>=6.0
 tqdm>=4.65.0
 
-# Optional: for visualization
+# Visualization
 matplotlib>=3.7.0
+napari>=0.4.0
 
 # Optional: for tensorboard logging
 tensorboard>=2.13.0
