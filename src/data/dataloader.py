@@ -66,7 +66,7 @@ class OrganSegmentationDataset(Dataset):
                 data=self.data,
                 transform=transform,
                 cache_rate=1.0,
-                num_worker_workers=4,
+                num_workers=4,
             )
         else:
             self.dataset = Dataset(data=self.data, transform=transform)

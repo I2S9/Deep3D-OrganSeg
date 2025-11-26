@@ -9,12 +9,10 @@ from typing import Optional, Tuple, Dict, Any
 import torch
 import numpy as np
 import nibabel as nib
-from scipy import ndimage
-from scipy.ndimage import binary_closing, binary_opening, binary_erosion, binary_dilation
+from scipy.ndimage import binary_closing, binary_opening
 
 from src.models import UNet3D
 from src.data import preprocessing
-from src.data.dataloader import get_validation_transforms
 
 
 def load_model(
