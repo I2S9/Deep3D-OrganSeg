@@ -39,7 +39,6 @@ ENV/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-*.ipynb
 
 # PyTorch
 *.pth
@@ -71,4 +70,5 @@ desktop.ini
 # Model checkpoints (uncomment if needed)
 # checkpoints/
 # models/saved/
+
 
