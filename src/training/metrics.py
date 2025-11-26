@@ -28,8 +28,8 @@ def dice_score(pred: torch.Tensor, target: torch.Tensor, smooth: float = 1e-5) -
     else:
         pred_binary = torch.argmax(pred, dim=1, keepdim=True)
 
-    pred_flat = pred_binary.view(pred_binary.shape[0], pred_binary.shape[1], -1).float()
-    target_flat = target.view(target.shape[0], target.shape[1], -1).float()
+    pred_flat = pred_binary.reshape(pred_binary.shape[0], pred_binary.shape[1], -1).float()
+    target_flat = target.reshape(target.shape[0], target.shape[1], -1).float()
 
     intersection = (pred_flat * target_flat).sum(dim=2)
     union = pred_flat.sum(dim=2) + target_flat.sum(dim=2)
@@ -54,8 +54,8 @@ def iou_score(pred: torch.Tensor, target: torch.Tensor, smooth: float = 1e-5) ->
     else:
         pred_binary = torch.argmax(pred, dim=1, keepdim=True)
 
-    pred_flat = pred_binary.view(pred_binary.shape[0], pred_binary.shape[1], -1).float()
-    target_flat = target.view(target.shape[0], target.shape[1], -1).float()
+    pred_flat = pred_binary.reshape(pred_binary.shape[0], pred_binary.shape[1], -1).float()
+    target_flat = target.reshape(target.shape[0], target.shape[1], -1).float()
 
     intersection = (pred_flat * target_flat).sum(dim=2)
     union = pred_flat.sum(dim=2) + target_flat.sum(dim=2) - intersection
@@ -91,8 +91,8 @@ class DiceLoss(nn.Module):
         else:
             pred_probs = torch.softmax(pred, dim=1)
 
-        pred_flat = pred_probs.view(pred_probs.shape[0], pred_probs.shape[1], -1)
-        target_flat = target.view(target.shape[0], target.shape[1], -1)
+        pred_flat = pred_probs.reshape(pred_probs.shape[0], pred_probs.shape[1], -1)
+        target_flat = target.reshape(target.shape[0], target.shape[1], -1)
 
         intersection = (pred_flat * target_flat).sum(dim=2)
         union = pred_flat.sum(dim=2) + target_flat.sum(dim=2)

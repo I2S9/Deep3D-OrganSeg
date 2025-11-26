@@ -1,0 +1,31 @@
+{
+  "experiment_date": "2025-11-26 21:31:40",
+  "hyperparameters": {
+    "model_config": {
+      "in_channels": 1,
+      "out_channels": 1,
+      "base_channels": 32,
+      "depth": 3
+    },
+    "num_epochs": 10,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "scheduler_type": "cosine",
+    "use_amp": false
+  },
+  "model_config": {
+    "in_channels": 1,
+    "out_channels": 1,
+    "base_channels": 32,
+    "depth": 3
+  },
+  "training_config": {
+    "num_epochs": 10,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "scheduler_type": "cosine",
+    "use_amp": false
+  }
+}
